@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Althea's Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #f3e7ba 60%, #b2dfdb 100%);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 7%;
+}
+section {
+  scroll-margin-top: 100px; /* Adjust this value to match your navbar height */
+}
+.section-scroll {
+  scroll-margin-top: 100px; /* Adjust as needed */
+}
+    body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .blog-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .blog-content {
+      font-size: 1rem;
+      color: #555;
+    }
+    .btn-read-more {
+      background-color: #1ea004;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-read-more:hover {
+      background-color: green;
+    }
+    .navbar a.text-dark.text-decoration-none {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar a.text-dark.text-decoration-none::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #1ea004;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+.navbar a.text-dark.text-decoration-none:hover::after {
+  width: 100%;
+}
+.banner {
+  padding-top: 50px;
+  z-index: 1050;
+}
+p{
+  text-indent: 2rem;
+}
+  </style>
+</head>
+
+<body class="container py-4">
+<header class="mb-4">
+  <nav class="navbar" style="padding: 1rem; display: flex; align-items: center; padding-right: 50px; z-index: 1020;">
+    <a href="#">
+      <img src="bloglogo.png" alt="Blog Logo" class="img-fluid" style="max-height:40px; width:auto; margin-right: 0px;padding-left: 40px;">
+    </a><span style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;font-weight: bold;">A L T H E A ' S B L O G</span>
+    <div style="display: flex; gap: 30px; font-size: 20px;">
+      <a href="#" class="text-dark text-decoration-none">Home</a>
+      <a href="#about" class="text-dark text-decoration-none">About</a>
+      <a href="#blogs" class="text-dark text-decoration-none">Blog</a>
+      <a href="#contact" class="text-dark text-decoration-none">Contact Me</a>
+    </div>
+  </nav>
+</header>
+  
+ <!-- Landing section -->
+<section id="banner" 
+  class="d-flex flex-column justify-content-center align-items-center text-center mb-10"
+  style="min-height: 70vh; background: linear-gradient(to bottom right, #f3e5abd4 60%, #b2dfdb 100%); border-radius: 20px; box-shadow: 0 8px 32px rgba(60,60,60,0.08); position: relative; overflow: hidden; margin-top: 110px;margin-bottom: 100px; padding-top: 40px;">
+  <h1 style="font-family: 'Georgia', serif; color: #4e342e;font-size: 50px;">Welcome to Sweet Home!</h1>
+  <p class="text-muted" style="font-family: 'Georgia', serif; color: #5d4037;font-size: 25px;">
+    Sharing thoughts, ideas, and stories like a family.
+  </p>
+  <a href="#about" class="btn btn-success mt-3 px-4 py-2" style="background-color: #1ea004; border: none;">
+    Explore
+  </a>
+  <!-- Optional: Add floating Ghibli-style elements for extra touch -->
+  <img src="https://pngimg.com/d/cloud_PNG16.png" alt="Cloud" style="position: absolute; left: 5%; top: 10%; width: 80px; opacity: 0.7;">
+  <img src="https://pngimg.com/d/cloud_PNG16.png" alt="Cloud" style="position: absolute; right: 8%; bottom: 15%; width: 60px; opacity: 0.5;">
+</section>
+
+<!-- Ghibli-style About Section -->
+<section id="about" class="py-5 mb-10 mt-12" style="background: linear-gradient(to bottom, #f3e5abd4 60%, #b2dfdb 100%); border-radius: 20px; box-shadow: 0 8px 32px rgba(60,60,60,0.08); min-height: 70vh;box-sizing: border-box;margin-top: 120px;padding-top: 50px;margin-bottom: 110px;">
+ <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 " style="padding-left: 30px;padding-right: 30px;">
+    <img src="theaghibili.png" alt="Ghibli Character" class="rounded-circle shadow" style="width: 300px; height: 300px; object-fit: cover; border: 3px solid #fff;">
+    <div>
+      <h2 class="fw-bold mb-3" style="font-family: 'Georgia', serif; color: #4e342e;text-align: center;">About Me</h2>
+      <p style="font-size: 20px; color: #5d4037; font-family: 'Georgia', serif;text-align: justify;">
+       Hi to my wonderful reader. I am Althea Suzanne E. Colindres. I'm just a girl living in a village, doing all right. Then I became princess overnight. I love to read, watch, and write but unfortunately writing doesn't love me back. I'm just 19 years old and wants to explore the world more. My motto in life is "it is not over, until I win." Thank you for reading this. I hope and pray that you would have a wonderful future, as I am.
+      </p>
+      <p style="font-size: 20px; color: #6d4c41;font-family: Georgia, 'Times New Roman', Times, serif;text-align: justify;">
+        I made this blog because my teacher wants me to do it, and since it is a requirement. BWAHAHAHA. The content of my blog are the activities that we made during class hours. Let's explore the beauty of simple moments together!
+      </p>
+      
+      <div class="text-left mt-8" style="letter-spacing:1px; font-size: 18px; color: #4e342e;">
+    Know Me More!
+  </div>
+
+
+
+          <!-- Socials -->
+      <div class="mt-4 d-flex gap-4 align-items-center">
+        <a href="https://www.facebook.com/rozenelizlalde#/" target="_blank" class="text-dark fs-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/susaness_lol/?hl=en" target="_blank" class="text-dark fs-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="tel:+639485588662" class="text-dark fs-3" aria-label="Phone"><i class="bi bi-telephone"></i></a>
+        <a href="mailto:altheasuzannecolindres@gmail.com" class="text-dark fs-3" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blogs Section -->
+<section id="blogs" class="py-3" style="background: #fffbe7; border-radius: 20px; box-shadow: 0 8px 32px rgba(60,60,60,0.08);margin-bottom: 60px;">
+   <div class="container">
+    <div class="text-center mb-2">
+      <h2 class="fw-bold" style="font-family: 'Georgia', serif; color: #4e342e;">My Blog Posts</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Post Card (separate from the blogs section) -->
+<div class="container mb-5">
+  <div class="blog-card p-4 py-10" style="border-radius: 20px;margin-bottom: 100px;">
+    <div class="d-flex flex-column flex-md-row align-items-left mb-10">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow me-md-4 mb-3 mb-md-0" style="width: 100px; height: 100px; object-fit: cover; border: 4px solid #f3e5abd4;">
+      <div>
+        <h3 class="mb-1" style="font-family: 'Georgia', serif; color: #1ea004;padding-top: 20px;">Blood is Thicker Than Water</h3>
+        <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+      </div>
+    </div>
+    <div class="blog-content" style="font-size: 1.1rem; color: #555;">
+      <p>
+        A celebration is a normal celebration, but with family, it became something special. Every occasion should be celebrated, even the simple ones. It can be birthdays, anniversaries, graduations, or even fishing. Every achievement in our life should be celebrated with our loved ones, our family.
+          Our family's tradition is something that I'm proud of. I was always looking forward to celebrating with them. Every time someone achieves something within our family, we don't forget to celebrate it. We celebrated because we treasure them and we are proud of them. For instance, like my 7-year-old cousin, he was a boy, and he won the chess game last week, and we celebrated because that achievement is something you're proud of. Or like one time we went fishing with our whole family, and suddenly my 7-year-old cousin boy, or we called him Ak Boy, caught a big fish, and just like that we celebrated as we grilled the fish he caught. 
+      </p>
+      <div class="more-text" style="display:none;">
+        <p>
+          However, there is no perfect tradition and family. Just like ours, there would be a flaw that makes our tradition imperfect. We're not always complete during this celebration. They would give their donation for the celebration, but they are far away from us. And sometimes, that's not the only reason. Our family sometimes fought with each other, which would lead to hatred. And because of this, our celebration becomes sorrowful. Just like when we celebrated the anniversary of my auntie J, we celebrated it in my other Tito's house; my father said he would barge in, drunk, and start hurling hurtful words towards my favourite cousin. And because of this incident, the result was a disaster because of this. My Auntie J went home, and my father fought with my other Tita. 
+          Celebration is always special when celebrated with our family. I will achieve becoming more special when we celebrate with our loved ones. I just realised that our tradition has its own uniqueness and flaws. There's no such thing as aect one; just like our tradition, family was never once perfect, ever. We fought sometimes, but we always found each other to forgive those who wronged us. It may not be simple because forgiveness is not easy to give. But let me remind you that there is giving and forgiveness, so we should give forgiveness because we deserve it. Celebrate our achievement with our family because blood is thicker than water.
+        </p>
+        <button class="btn btn-outline-success see-less-btn mt-2">See less</button>
+      </div>
+      <button class="btn btn-success see-more-btn mt-2">See more</button>
+    </div>
+  </div>
+
+  <!-- Blog Post Card (swith image) -->
+<div class="container mb-5">
+  <div class="blog-card p-4 py-10" style="border-radius: 20px; margin-bottom: 100px;">
+    
+    <!-- Author Section -->
+    <div class="d-flex flex-column flex-md-row align-items-start mb-4">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow me-md-4 mb-3 mb-md-0" 
+        style="width: 100px; height: 100px; object-fit: cover; border: 4px solid #f3e5abd4;">
+      <div>
+        <h3 class="mb-1" style="font-family: 'Georgia', serif; color: 1ea004; padding-top: 20px;">
+          Evaluating an Advertisement: "Stop the violence. Don’t drink, don’t drive."
+        </h3>
+        <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+      </div>
+    </div>
+
+    <!-- Blog Content with Image on Right -->
+    <div class="d-flex flex-column flex-md-row align-items-start">
+  <div class="blog-content flex-grow-1" style="font-size: 1.1rem; color: #555;">
+    <p style="text-indent: 2em; text-align: justify;">
+       Source: I found it on Behance, which is where creative people share their work.
+        It tells me this ad was made by talented people who know how to get a message across.
+    </p>
+    <p style="text-indent: 2em; text-align: justify;">
+       Context: This image shows the danger of being drunk and still pursue to drive. 
+       Because of this, many accidents happened and some people died during or after these accidents. 
+    </p>
+
+    <p style="text-indent: 2em; text-align: justify;">
+       Contents: This creative picture shows a being punched in the face, however, if we look closer, there’s an image drawn in the man face and in the hand. 
+       The drawings show the car crushing together symbolizing the accidents that might happen when we are drunk and still pursuing to drive. Under to the car crushing, there’s these words saying “Stop the violence. Don’t drunk and drive.” 
+       A very creative way to advertise about the violence that might happen when we are driving while drunk.  
+    </p>
+    <div class="more-text" style="display: none;">
+      <p>
+       Audience: This advertisement is for everyone, especially to those people who love to drink alcohol and continue to drive while being drunk.
+      </p>
+       <p>
+       Image Creator: It was created by Terremoto Propaganda, an advertising agency from Brazil.
+        They seem to make ads that are really creative and get people’s attention.
+      </p>
+       <p>
+       Visual: The visual of this image is attractive that would make you to stop walking and stare it for longer time.
+        That’s how powerful the image was made.
+      </p>
+       <p>
+       Technical Quality: The photo is high quality and well-done. The way they painted the cars on the man’s face and hand is really clever, and the text is easy to read. 
+       The advertisement is very well-made and professional.
+      </p>
+      <button class="btn btn-outline-success see-less-btn mt-2" onclick="hideImage()">See less</button>
+    </div>
+    <button class="btn btn-success see-more-btn mt-2" onclick="showImage()">See more</button>
+  </div>
+
+
+  <!-- Image on Right (Split into Two Halves) -->
+  <div class="ms-md-4 mt-4 mt-md-0 text-center" style="min-width:500px;">
+    <!-- Top Half (Always Visible) -->
+    <img src="Picture1.png" alt="Infographic Top Half" class="img-fluid rounded shadow"
+     style="width: 400px; max-width: 100%; border-radius: 15px; display: block; margin-bottom: 0;margin-left: 50px;margin-top: 50px;">
+
+    <!-- Bottom Half (Initially Hidden) -->
+    <img src="Picture1.png" alt="Infographic Bottom Half" class="img-fluid rounded shadow bottomImage"
+      style="width: 300px; max-width: 100%; border-radius: 15px; display: none;margin-left: 70px;">
+  </div>
+</div>
+</div>
+
+<!-- Blog Post Card (swith image) -->
+<div class="container mb-5">
+  <div class="blog-card p-4 py-10" style="border-radius: 20px; margin-bottom: 100px;">
+    
+    <!-- Author Section -->
+    <div class="d-flex flex-column flex-md-row align-items-start mb-4">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow me-md-4 mb-3 mb-md-0" 
+        style="width: 100px; height: 100px; object-fit: cover; border: 4px solid #f3e5abd4;">
+      <div>
+        <h3 class="mb-1" style="font-family: 'Georgia', serif; color: 1ea004; padding-top: 20px;">
+          The Shape of News How educators can use new coverage as a
+ tool to foster critical thinking skills
+        </h3>
+        <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+      </div>
+    </div>
+    <!-- Blog Card with 3 Images Side by Side, No Paragraph -->
+<div class="container mb-2">
+  <div class="blog-card p-4" style="border-radius: 20px; background: linear-gradient(to bottom,white 30%, #f3e5abd4); overflow-x: auto; white-space: nowrap;">
+    <div class="d-flex" style="gap: 10px;">
+      <img src="picture2.png" alt="Infographic 1" class="img-fluid" style="width: 600px; height: 600px;">
+      <img src="picture3.png" alt="Infographic 2" class="img-fluid" style="width: 600px; height: 600px;">
+      <img src="picture4.png" alt="Infographic 3" class="img-fluid" style="width: 600px; height: 600px;margin-right: 30px;">
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function showImage() {
+  document.getElementById("bottomImage").style.display = "block"; // Show bottom half
+}
+
+function hideImage() {
+  document.getElementById("bottomImage").style.display = "none"; // Hide bottom half again
+}
+</script>
+
+  </div>
+</div>
+<!-- Blog Post Card (swith image) -->
+<div class="container mb-5">
+  <div class="blog-card p-4 py-10" style="border-radius: 20px; margin-bottom: 100px;">
+    
+    <!-- Author Section -->
+    <div class="d-flex flex-column flex-md-row align-items-start mb-4">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow me-md-4 mb-3 mb-md-0" 
+        style="width: 100px; height: 100px; object-fit: cover; border: 4px solid #f3e5abd4;">
+      <div>
+        <h3 class="mb-1" style="font-family: 'Georgia', serif; color: 1ea004; padding-top: 20px;">
+         My Resume
+        </h3>
+        <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+      </div>
+    </div>
+    <div class="container mb-2 d-flex flex-column align-items-center" style="border-radius: 20px; background: linear-gradient(to bottom, white 30%, #f3e5abd4);">
+  <div class="resume-container p-4" style="width: 90%; max-width: 500px; text-align: center;">
+    <img src="resume.jpg" alt="My Resume" class="img-fluid" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  </div>
+</div>
+</div>
+<!-- Two Vertical Blog Cards Side by Side for Infographics -->
+<div class="container mb-5">
+  <div class="row g-4 justify-content-center">
+    <!-- Blog Card 1 -->
+<div class="col-12 col-md-6">
+  <div class="blog-card p-4 d-flex flex-column align-items-center" style="border-radius: 20px;min-height: 600px;background: linear-gradient(to bottom,white 30%, #f3e5abd4);">
+      <div class="d-flex flex-column align-items-center mb-3">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow mb-2" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #f3e5abd4;">
+      <h3 class="mb-1" style="font-family: 'Georgia', serif; color: #1ea004;">Political Fanacism</h3>
+      <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+    </div>
+    <div class="w-100 text-center">
+      <img src="infographic1.jpg" alt="Infographic 1" class="img-fluid" style="width: 80%; max-width: 100%; border-radius: 12px;">
+    </div>
+    <div class="infographic-more-1" style="display:none; width:100%;">
+      <img src="infographic1cont.jpg" alt="Infographic 1 More" class="img-fluid" style="width: 80%; max-width: 100%; border-radius: 12px;margin-left: 10%;">
+    </div>
+    <button class="btn btn-success see-more-img-btn-1 mt-2">See more</button>
+    <button class="btn btn-outline-success see-less-img-btn-1 mt-2" style="display:none;">See less</button>
+  </div>
+</div>
+<!-- Blog Card 2 -->
+<div class="col-12 col-md-6">
+<div class="blog-card p-4 d-flex flex-column align-items-center" style="border-radius: 20px;min-height: 600px;background: linear-gradient(to bottom,white 30%, #f3e5abd4);">
+    <div class="d-flex flex-column align-items-center mb-3">
+      <img src="theaghibili.png" alt="Author" class="rounded-circle shadow mb-2" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #f3e5abd4;">
+      <h3 class="mb-1" style="font-family: 'Georgia', serif; color: #1ea004;">Country Introduction: Brazil</h3>
+      <div class="text-muted" style="font-size: 1rem;">by Althea Suzanne E. Colindres</div>
+    </div>
+    <div class="w-100 text-center">
+      <img src="infographic2.jpg" alt="Infographic 2" class="img-fluid" style="width: 80%; max-width: 100%; border-radius: 12px;">
+    </div>
+    <div class="infographic-more-2" style="display:none; width:100%;">
+      <img src="infographic2cont.jpg" alt="Infographic 2 More" class="img-fluid" style="width: 80%; max-width: 100%; border-radius: 12px; margin-left: 30px;margin-left: 10%;">
+    </div>
+    <button class="btn btn-success see-more-img-btn-2 mt-2">See more</button>
+    <button class="btn btn-outline-success see-less-img-btn-2 mt-2" style="display:none;">See less</button>
+  </div>
+</div>
+  </div>
+</div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Blog Card 1
+  document.querySelector('.see-more-img-btn-1').addEventListener('click', function() {
+    document.querySelector('.infographic-more-1').style.display = 'block';
+    this.style.display = 'none';
+    document.querySelector('.see-less-img-btn-1').style.display = 'inline-block';
+  });
+  document.querySelector('.see-less-img-btn-1').addEventListener('click', function() {
+    document.querySelector('.infographic-more-1').style.display = 'none';
+    this.style.display = 'none';
+    document.querySelector('.see-more-img-btn-1').style.display = 'inline-block';
+  });
+
+  // Blog Card 2
+  document.querySelector('.see-more-img-btn-2').addEventListener('click', function() {
+    document.querySelector('.infographic-more-2').style.display = 'block';
+    this.style.display = 'none';
+    document.querySelector('.see-less-img-btn-2').style.display = 'inline-block';
+  });
+  document.querySelector('.see-less-img-btn-2').addEventListener('click', function() {
+    document.querySelector('.infographic-more-2').style.display = 'none';
+    this.style.display = 'none';
+    document.querySelector('.see-more-img-btn-2').style.display = 'inline-block';
+  });
+});
+</script>
+<script>
+// See more/less functionality for blog cards
+document.querySelectorAll('.see-more-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const blogContent = btn.closest('.blog-content');
+    blogContent.querySelector('.more-text').style.display = 'block';
+    btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.see-less-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const blogContent = btn.closest('.blog-content');
+    blogContent.querySelector('.more-text').style.display = 'none';
+    blogContent.querySelector('.see-more-btn').style.display = 'inline-block';
+  });
+});
+
+// See more/less functionality for infographic crop
+document.querySelectorAll('.see-more-img-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const container = btn.closest('.infographic-crop-container');
+    container.classList.add('expanded');
+    btn.style.display = 'none';
+    container.querySelector('.see-less-img-btn').style.display = 'inline-block';
+  });
+});
+document.querySelectorAll('.see-less-img-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const container = btn.closest('.infographic-crop-container');
+    container.classList.remove('expanded');
+    btn.style.display = 'none';
+    container.querySelector('.see-more-img-btn').style.display = 'inline-block';
+  });
+});
+</script>
+</div>
+
+<!-- Contact Me Section -->
+<section id="contact" class="main-section py-5 mb-5" style="background: linear-gradient(to bottom, #ffffffd2 60%, #b2dfdb 100%); border-radius: 20px; box-shadow: 0 8px 32px rgba(60,60,60,0.08); min-height: 60vh;box-sizing: border-box;">
+  <div class="container">
+    <h2 class="text-center mb-4" style="font-family: 'Georgia', serif; color: #082a01;">Contact Me!</h2>
+    <div class="text-center mt-4">
+      <p style="font-size: 1rem; color: #082a01;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, serif, cursive;">
+        I would love to hear from you! Feel free to reach out with any questions or just to say hi.
+        
+      </p>
+   <form id="contactForm" action="https://formspree.io/f/xanogwdd" method="POST">
+  <div class="row mb-3">
+    <div class="col-md-6 mb-3 mb-md-0">
+      <input type="text" class="form-control" name="name" placeholder="Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="email" class="form-control" name="email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="mb-3">
+    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-dark px-4">Send Message</button>
+  </form>
+  <div id="sentMessage" class="mt-3 text-success fw-bold" style="display:none;">
+  MESSAGE SENT!
+</div>
+  <script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  // Send the form data using fetch
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.getElementById('sentMessage').style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      document.getElementById('sentMessage').style.display = 'none';
+    }, 4000);
+  } else {
+    alert('There was a problem sending your message. Please try again.');
+  }
+});
+</script>
+  <div class="mt-4 gap-6 align-items-center">
+    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">or Visit</p>
+    <a href="https://www.facebook.com/rozenelizlalde#/" target="_blank" class="text-dark fs-3" aria-label="Facebook"><i class="bi bi-facebook"style="padding-right: 20px"></i></a>
+    <a href="https://www.instagram.com/susaness_lol/?hl=en" target="_blank" class="text-dark fs-3" aria-label="Instagram"><i class="bi bi-instagram"style="padding-right: 20px"></i></a>
+    <a href="tel:+639485588662" class="text-dark fs-3" aria-label="Phone"><i class="bi bi-telephone" style="padding-right: 20px"></i></a>
+    <a href="mailto:altheasuzannecolindres@gmail.com" class="text-dark fs-3" aria-label="Email"><i class="bi bi-envelope"style="padding-right: 20px"></i></a>
+  </div>
+    </form>
+    <script>
+  // Show "Sent message!" after form submit
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('sentMessage').style.display = 'block';
+    // Optionally clear the form:
+    this.reset();
+    // Optionally hide the message after a few seconds:
+    setTimeout(() => {
+      document.getElementById('sentMessage').style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+    </div>
+</section>
+
+  <footer class="text-center mt-4" style="color: #fff;">
+    <p>&copy; 2025 MsSMC. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
